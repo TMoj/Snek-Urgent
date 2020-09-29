@@ -2,13 +2,11 @@
 
 class head{};class body{}; class food{};class sFood{};
 
-let s;
-let state=0;
+let s,posX,posY;
 let foodPos=[];
+let state=0;
 let segments=4;
 let direction='r';
-let posX;
-let posY;
 let headPos='z3s9';
 let bodyPos=['z3s8','z4s8','z5s8'];
 const wLenghtM=364,wLenghtE=75;
@@ -88,13 +86,13 @@ function foodPlace(){																															 //foodplacer
 	return food;}
 }
 
-function foodEat(fpos){																														//foodpurpose
+function foodEat(fpos){																														//Foodpurpose
 	if(fpos===headPos){
 		if(document.getElementById(fpos).classList.contains('food')===true){segments++;
 			document.getElementById(fpos).classList.remove('food');
 		}if(document.getElementById(fpos).classList.contains('sFood')===true){segments+=3;
 			document.getElementById(fpos).classList.remove('sFood');
-		}
+		}return true
 	}
 }
 
@@ -117,13 +115,17 @@ function foodClear(){																											 //foodclear for hard
 	document.getElementById(foodPos[3]).classList.remove('sFood');
 }
 
-function foodSimple(){																														//food-simple
-	foodPos[0]=foodPlace();foodPos[1]=foodPlace();
-	if(document.getElementsByClassName('food')[0]===undefined){
-		document.getElementById(foodPos[0]).classList.add('food')
-	}if(state===1){return}
-	if(document.getElementsByClassName('sFood')[0]===undefined){
+function foodNormal(){																												//food for normal
+	foodPos[1]=foodPlace();	foodEasy();
+	if(document.getElementsByClassName('sFood')[0]===undefined||foodEat(foodPos[1])===true){
 		document.getElementById(foodPos[1]).classList.add('sFood')
+	}
+}
+
+function foodEasy(){																														//food for easy
+	foodPos[0]=foodPlace();
+	if(document.getElementsByClassName('food')[0]===undefined||foodEat(foodPos[0])===true){
+		document.getElementById(foodPos[0]).classList.add('food')
 	}
 }
 
@@ -143,6 +145,6 @@ function main(){
 		document.getElementById('info').innerHTML='Current lenght: '+segments;
 		if(state>0||state<4){snekMove()}
 		foodEat(headPos);	winCon();
-		if(1<=state<=2){foodSimple()}
+		if(state===1){foodEasy()}	if(state===2){foodNormal()}
 	}
 }
