@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link id="myStyle" rel="stylesheet" type="text/css" href="Style.css">
+	<title>Snek game</title>
+</head>
+<body>
+	<h1>Snek game</h1>
+	
+	<button id='info' style='pointer-events:none'>Choose the difficulty</button>
+	<button id='r' onclick=location.reload()>Restart?</button>
+	<table id='b' style=width:100%><tr>
+			<td style='width:33,3%'><button onclick='buttons(1)'>Easy</button></td>
+			<td style='width:33,3%'><button onclick='buttons(2)'>Normal</button></td>
+			<td style='width:33,3%'><button onclick='buttons(3)'>Hard</button></td>
+	</tr></table>
+	
+	<!--Game area-->	
+	<table>
+		<tr id=z1>
+			<td id=z1s1 class='n'></td>
+			<td id=z1s2 class='n'></td>
+			<td id=z1s3 class='n'></td>
+			<td id=z1s4 class='n'></td>
+			<td id=z1s5 class='n'></td>
+			<td id=z1s6 class='n'></td>
+			<td id=z1s7 class='n'></td>
+			<td id=z1s8 class='n'></td>
+			<td id=z1s9 class='n'></td>
+			<td id=z1s10 class='n'></td>
+			<td id=z1s11 class='n'></td>
+			<td id=z1s12 class='n'></td>
+			<td id=z1s13 class='n'></td>
+			<td id=z1s14 class='n'></td>
+			<td id=z1s15 class='n'></td>
+			<td id=z1s16 class='n'></td>
+			<td id=z1s17 class='n'></td>
+			<td id=z1s18 class='n'></td>
+			<td id=z1s19 class='n'></td>
+			<td id=z1s20 class='n'></td>
+			<td id=z1s21 class='n'></td>
+			<td id=z1s22 class='n'></td>
+			<td id=z1s23 class='n'></td>
+			<td id=z1s24 class='n'></td>
+			<td id=z1s25 class='n'></td>
+			<td id=z1s26 class='n'></td>
+			<td id=z1s27 class='n'></td>
+			<td id=z1s28 class='n'></td>
+		</tr>
+		<tr id=z2>
+			<td id=z2s1 class='n'></td>
+			<td id=z2s2 class='n'></td>
+			<td id=z2s3 class='n'></td>
+			<td id=z2s4 class='n'></td>
+			<td id=z2s5 class='n'></td>
+			<td id=z2s6 class='n'></td>
+			<td id=z2s7 class='n'></td>
+			<td id=z2s8 class='n'></td>
+			<td id=z2s9 class='n'></td>
+			<td id=z2s10 class='n'></td>
+			<td id=z2s11 class='n'></td>
+			<td id=z2s12 class='n'></td>
+			<td id=z2s13 class='n'></td>
+			<td id=z2s14 class='n'></td>
+			<td id=z2s15 class='n'></td>
+			<td id=z2s16 class='n'></td>
+			<td id=z2s17 class='n'></td>
+			<td id=z2s18 class='n'></td>
+			<td id=z2s19 class='n'></td>
+			<td id=z2s20 class='n'></td>
+			<td id=z2s21 class='n'></td>
+			<td id=z2s22 class='n'></td>
+			<td id=z2s23 class='n'></td>
+			<td id=z2s24 class='n'></td>
+			<td id=z2s25 class='n'></td>
+			<td id=z2s26 class='n'></td>
+			<td id=z2s27 class='n'></td>
+			<td id=z2s28 class='n'></td>
+		</tr>
+		<tr id=z3>
+			<td id=z3s1 class='n'></td>
+			<td id=z3s2 class='n'></td>
+			<td id=z3s3 class='n'></td>
+			<td id=z3s4 class='n'></td>
+			<td id=z3s5 class='n'></td>
+			<td id=z3s6 class='n'></td>
+			<td id=z3s7 class='n'></td>
+			<td id=z3s8 class='body'></td>
+			<td id=z3s9 class='head'></td>
+			<td id=z3s10 class='n'></td>
+			<td id=z3s11 class='n'></td>
+			<td id=z3s12 class='n'></td>
+			<td id=z3s13 class='n'></td>
+			<td id=z3s14 class='n'></td>
+			<td id=z3s15 class='n'></td>
+			<td id=z3s16 class='n'></td>
+			<td id=z3s17 class='n'></td>
+			<td id=z3s18 class='n'></td>
+			<td id=z3s19 class='n'></td>
+			<td id=z3s20 class='n'></td>
+			<td id=z3s21 class='n'></td>
+			<td id=z3s22 class='n'></td>
+			<td id=z3s23 class='n'></td>
+			<td id=z3s24 class='n'></td>
+			<td id=z3s25 class='n'></td>
+			<td id=z3s26 class='n'></td>
+			<td id=z3s27 class='n'></td>
+			<td id=z3s28 class='n'></td>
+		</tr>
+		<tr id=z4>
+			<td id=z4s1 class='n'></td>
+			<td id=z4s2 class='n'></td>
+			<td id=z4s3 class='n'></td>
+			<td id=z4s4 class='n'></td>
+			<td id=z4s5 class='n'></td>
+			<td id=z4s6 class='n'></td>
+			<td id=z4s7 class='n'></td>
+			<td id=z4s8 class='body'></td>
+			<td id=z4s9 class='n'></td>
+			<td id=z4s10 class='n'></td>
+			<td id=z4s11 class='n'></td>
+			<td id=z4s12 class='n'></td>
+			<td id=z4s13 class='n'></td>
+			<td id=z4s14 class='n'></td>
+			<td id=z4s15 class='n'></td>
+			<td id=z4s16 class='n'></td>
+			<td id=z4s17 class='n'></td>
+			<td id=z4s18 class='n'></td>
+			<td id=z4s19 class='n'></td>
+			<td id=z4s20 class='n'></td>
+			<td id=z4s21 class='n'></td>
+			<td id=z4s22 class='n'></td>
+			<td id=z4s23 class='n'></td>
+			<td id=z4s24 class='n'></td>
+			<td id=z4s25 class='n'></td>
+			<td id=z4s26 class='n'></td>
+			<td id=z4s27 class='n'></td>
+			<td id=z4s28 class='n'></td>
+		</tr>
+		<tr id=z5>
+			<td id=z5s1 class='n'></td>
+			<td id=z5s2 class='n'></td>
+			<td id=z5s3 class='n'></td>
+			<td id=z5s4 class='n'></td>
+			<td id=z5s5 class='n'></td>
+			<td id=z5s6 class='n'></td>
+			<td id=z5s7 class='n'></td>
+			<td id=z5s8 class='body'></td>
+			<td id=z5s9 class='n'></td>
+			<td id=z5s10 class='n'></td>
+			<td id=z5s11 class='n'></td>
+			<td id=z5s12 class='n'></td>
+			<td id=z5s13 class='n'></td>
+			<td id=z5s14 class='n'></td>
+			<td id=z5s15 class='n'></td>
+			<td id=z5s16 class='n'></td>
+			<td id=z5s17 class='n'></td>
+			<td id=z5s18 class='n'></td>
+			<td id=z5s19 class='n'></td>
+			<td id=z5s20 class='n'></td>
+			<td id=z5s21 class='n'></td>
+			<td id=z5s22 class='n'></td>
+			<td id=z5s23 class='n'></td>
+			<td id=z5s24 class='n'></td>
+			<td id=z5s25 class='n'></td>
+			<td id=z5s26 class='n'></td>
+			<td id=z5s27 class='n'></td>
+			<td id=z5s28 class='n'></td>
+		</tr>
+		<tr id=z6>
+			<td id=z6s1 class='n'></td>
+			<td id=z6s2 class='n'></td>
+			<td id=z6s3 class='n'></td>
+			<td id=z6s4 class='n'></td>
+			<td id=z6s5 class='n'></td>
+			<td id=z6s6 class='n'></td>
+			<td id=z6s7 class='n'></td>
+			<td id=z6s8 class='n'></td>
+			<td id=z6s9 class='n'></td>
+			<td id=z6s10 class='n'></td>
+			<td id=z6s11 class='n'></td>
+			<td id=z6s12 class='n'></td>
+			<td id=z6s13 class='n'></td>
+			<td id=z6s14 class='n'></td>
+			<td id=z6s15 class='n'></td>
+			<td id=z6s16 class='n'></td>
+			<td id=z6s17 class='n'></td>
+			<td id=z6s18 class='n'></td>
+			<td id=z6s19 class='n'></td>
+			<td id=z6s20 class='n'></td>
+			<td id=z6s21 class='n'></td>
+			<td id=z6s22 class='n'></td>
+			<td id=z6s23 class='n'></td>
+			<td id=z6s24 class='n'></td>
+			<td id=z6s25 class='n'></td>
+			<td id=z6s26 class='n'></td>
+			<td id=z6s27 class='n'></td>
+			<td id=z6s28 class='n'></td>
+		</tr>
+		<tr id=z7>
+			<td id=z7s1 class='n'></td>
+			<td id=z7s2 class='n'></td>
+			<td id=z7s3 class='n'></td>
+			<td id=z7s4 class='n'></td>
+			<td id=z7s5 class='n'></td>
+			<td id=z7s6 class='n'></td>
+			<td id=z7s7 class='n'></td>
+			<td id=z7s8 class='n'></td>
+			<td id=z7s9 class='n'></td>
+			<td id=z7s10 class='n'></td>
+			<td id=z7s11 class='n'></td>
+			<td id=z7s12 class='n'></td>
+			<td id=z7s13 class='n'></td>
+			<td id=z7s14 class='n'></td>
+			<td id=z7s15 class='n'></td>
+			<td id=z7s16 class='n'></td>
+			<td id=z7s17 class='n'></td>
+			<td id=z7s18 class='n'></td>
+			<td id=z7s19 class='n'></td>
+			<td id=z7s20 class='n'></td>
+			<td id=z7s21 class='n'></td>
+			<td id=z7s22 class='n'></td>
+			<td id=z7s23 class='n'></td>
+			<td id=z7s24 class='n'></td>
+			<td id=z7s25 class='n'></td>
+			<td id=z7s26 class='n'></td>
+			<td id=z7s27 class='n'></td>
+			<td id=z7s28 class='n'></td>
+		</tr>
+		<tr id=z8>
+			<td id=z8s1 class='n'></td>
+			<td id=z8s2 class='n'></td>
+			<td id=z8s3 class='n'></td>
+			<td id=z8s4 class='n'></td>
+			<td id=z8s5 class='n'></td>
+			<td id=z8s6 class='n'></td>
+			<td id=z8s7 class='n'></td>
+			<td id=z8s8 class='n'></td>
+			<td id=z8s9 class='n'></td>
+			<td id=z8s10 class='n'></td>
+			<td id=z8s11 class='n'></td>
+			<td id=z8s12 class='n'></td>
+			<td id=z8s13 class='n'></td>
+			<td id=z8s14 class='n'></td>
+			<td id=z8s15 class='n'></td>
+			<td id=z8s16 class='n'></td>
+			<td id=z8s17 class='n'></td>
+			<td id=z8s18 class='n'></td>
+			<td id=z8s19 class='n'></td>
+			<td id=z8s20 class='n'></td>
+			<td id=z8s21 class='n'></td>
+			<td id=z8s22 class='n'></td>
+			<td id=z8s23 class='n'></td>
+			<td id=z8s24 class='n'></td>
+			<td id=z8s25 class='n'></td>
+			<td id=z8s26 class='n'></td>
+			<td id=z8s27 class='n'></td>
+			<td id=z8s28 class='n'></td>
+		</tr>
+		<tr id=z9>
+			<td id=z9s1 class='n'></td>
+			<td id=z9s2 class='n'></td>
+			<td id=z9s3 class='n'></td>
+			<td id=z9s4 class='n'></td>
+			<td id=z9s5 class='n'></td>
+			<td id=z9s6 class='n'></td>
+			<td id=z9s7 class='n'></td>
+			<td id=z9s8 class='n'></td>
+			<td id=z9s9 class='n'></td>
+			<td id=z9s10 class='n'></td>
+			<td id=z9s11 class='n'></td>
+			<td id=z9s12 class='n'></td>
+			<td id=z9s13 class='n'></td>
+			<td id=z9s14 class='n'></td>
+			<td id=z9s15 class='n'></td>
+			<td id=z9s16 class='n'></td>
+			<td id=z9s17 class='n'></td>
+			<td id=z9s18 class='n'></td>
+			<td id=z9s19 class='n'></td>
+			<td id=z9s20 class='n'></td>
+			<td id=z9s21 class='n'></td>
+			<td id=z9s22 class='n'></td>
+			<td id=z9s23 class='n'></td>
+			<td id=z9s24 class='n'></td>
+			<td id=z9s25 class='n'></td>
+			<td id=z9s26 class='n'></td>
+			<td id=z9s27 class='n'></td>
+			<td id=z9s28 class='n'></td>
+		</tr>
+		<tr id=z10>
+			<td id=z10s1 class='n'></td>
+			<td id=z10s2 class='n'></td>
+			<td id=z10s3 class='n'></td>
+			<td id=z10s4 class='n'></td>
+			<td id=z10s5 class='n'></td>
+			<td id=z10s6 class='n'></td>
+			<td id=z10s7 class='n'></td>
+			<td id=z10s8 class='n'></td>
+			<td id=z10s9 class='n'></td>
+			<td id=z10s10 class='n'></td>
+			<td id=z10s11 class='n'></td>
+			<td id=z10s12 class='n'></td>
+			<td id=z10s13 class='n'></td>
+			<td id=z10s14 class='n'></td>
+			<td id=z10s15 class='n'></td>
+			<td id=z10s16 class='n'></td>
+			<td id=z10s17 class='n'></td>
+			<td id=z10s18 class='n'></td>
+			<td id=z10s19 class='n'></td>
+			<td id=z10s20 class='n'></td>
+			<td id=z10s21 class='n'></td>
+			<td id=z10s22 class='n'></td>
+			<td id=z10s23 class='n'></td>
+			<td id=z10s24 class='n'></td>
+			<td id=z10s25 class='n'></td>
+			<td id=z10s26 class='n'></td>
+			<td id=z10s27 class='n'></td>
+			<td id=z10s28 class='n'></td>
+		</tr>
+		<tr id=z11>
+			<td id=z11s1 class='n'></td>
+			<td id=z11s2 class='n'></td>
+			<td id=z11s3 class='n'></td>
+			<td id=z11s4 class='n'></td>
+			<td id=z11s5 class='n'></td>
+			<td id=z11s6 class='n'></td>
+			<td id=z11s7 class='n'></td>
+			<td id=z11s8 class='n'></td>
+			<td id=z11s9 class='n'></td>
+			<td id=z11s10 class='n'></td>
+			<td id=z11s11 class='n'></td>
+			<td id=z11s12 class='n'></td>
+			<td id=z11s13 class='n'></td>
+			<td id=z11s14 class='n'></td>
+			<td id=z11s15 class='n'></td>
+			<td id=z11s16 class='n'></td>
+			<td id=z11s17 class='n'></td>
+			<td id=z11s18 class='n'></td>
+			<td id=z11s19 class='n'></td>
+			<td id=z11s20 class='n'></td>
+			<td id=z11s21 class='n'></td>
+			<td id=z11s22 class='n'></td>
+			<td id=z11s23 class='n'></td>
+			<td id=z11s24 class='n'></td>
+			<td id=z11s25 class='n'></td>
+			<td id=z11s26 class='n'></td>
+			<td id=z11s27 class='n'></td>
+			<td id=z11s28 class='n'></td>
+		</tr>
+		<tr id=z12>
+			<td id=z12s1 class='n'></td>
+			<td id=z12s2 class='n'></td>
+			<td id=z12s3 class='n'></td>
+			<td id=z12s4 class='n'></td>
+			<td id=z12s5 class='n'></td>
+			<td id=z12s6 class='n'></td>
+			<td id=z12s7 class='n'></td>
+			<td id=z12s8 class='n'></td>
+			<td id=z12s9 class='n'></td>
+			<td id=z12s10 class='n'></td>
+			<td id=z12s11 class='n'></td>
+			<td id=z12s12 class='n'></td>
+			<td id=z12s13 class='n'></td>
+			<td id=z12s14 class='n'></td>
+			<td id=z12s15 class='n'></td>
+			<td id=z12s16 class='n'></td>
+			<td id=z12s17 class='n'></td>
+			<td id=z12s18 class='n'></td>
+			<td id=z12s19 class='n'></td>
+			<td id=z12s20 class='n'></td>
+			<td id=z12s21 class='n'></td>
+			<td id=z12s22 class='n'></td>
+			<td id=z12s23 class='n'></td>
+			<td id=z12s24 class='n'></td>
+			<td id=z12s25 class='n'></td>
+			<td id=z12s26 class='n'></td>
+			<td id=z12s27 class='n'></td>
+			<td id=z12s28 class='n'></td>
+		</tr>
+		<tr id=z13>
+			<td id=z13s1 class='n'></td>
+			<td id=z13s2 class='n'></td>
+			<td id=z13s3 class='n'></td>
+			<td id=z13s4 class='n'></td>
+			<td id=z13s5 class='n'></td>
+			<td id=z13s6 class='n'></td>
+			<td id=z13s7 class='n'></td>
+			<td id=z13s8 class='n'></td>
+			<td id=z13s9 class='n'></td>
+			<td id=z13s10 class='n'></td>
+			<td id=z13s11 class='n'></td>
+			<td id=z13s12 class='n'></td>
+			<td id=z13s13 class='n'></td>
+			<td id=z13s14 class='n'></td>
+			<td id=z13s15 class='n'></td>
+			<td id=z13s16 class='n'></td>
+			<td id=z13s17 class='n'></td>
+			<td id=z13s18 class='n'></td>
+			<td id=z13s19 class='n'></td>
+			<td id=z13s20 class='n'></td>
+			<td id=z13s21 class='n'></td>
+			<td id=z13s22 class='n'></td>
+			<td id=z13s23 class='n'></td>
+			<td id=z13s24 class='n'></td>
+			<td id=z13s25 class='n'></td>
+			<td id=z13s26 class='n'></td>
+			<td id=z13s27 class='n'></td>
+			<td id=z13s28 class='n'></td>
+		</tr>
+		<tr id=z14>
+			<td id=z14s1 class='n'></td>
+			<td id=z14s2 class='n'></td>
+			<td id=z14s3 class='n'></td>
+			<td id=z14s4 class='n'></td>
+			<td id=z14s5 class='n'></td>
+			<td id=z14s6 class='n'></td>
+			<td id=z14s7 class='n'></td>
+			<td id=z14s8 class='n'></td>
+			<td id=z14s9 class='n'></td>
+			<td id=z14s10 class='n'></td>
+			<td id=z14s11 class='n'></td>
+			<td id=z14s12 class='n'></td>
+			<td id=z14s13 class='n'></td>
+			<td id=z14s14 class='n'></td>
+			<td id=z14s15 class='n'></td>
+			<td id=z14s16 class='n'></td>
+			<td id=z14s17 class='n'></td>
+			<td id=z14s18 class='n'></td>
+			<td id=z14s19 class='n'></td>
+			<td id=z14s20 class='n'></td>
+			<td id=z14s21 class='n'></td>
+			<td id=z14s22 class='n'></td>
+			<td id=z14s23 class='n'></td>
+			<td id=z14s24 class='n'></td>
+			<td id=z14s25 class='n'></td>
+			<td id=z14s26 class='n'></td>
+			<td id=z14s27 class='n'></td>
+			<td id=z14s28 class='n'></td>
+		</tr>
+		<tr id=z15>
+			<td id=z15s1 class='n'></td>
+			<td id=z15s2 class='n'></td>
+			<td id=z15s3 class='n'></td>
+			<td id=z15s4 class='n'></td>
+			<td id=z15s5 class='n'></td>
+			<td id=z15s6 class='n'></td>
+			<td id=z15s7 class='n'></td>
+			<td id=z15s8 class='n'></td>
+			<td id=z15s9 class='n'></td>
+			<td id=z15s10 class='n'></td>
+			<td id=z15s11 class='n'></td>
+			<td id=z15s12 class='n'></td>
+			<td id=z15s13 class='n'></td>
+			<td id=z15s14 class='n'></td>
+			<td id=z15s15 class='n'></td>
+			<td id=z15s16 class='n'></td>
+			<td id=z15s17 class='n'></td>
+			<td id=z15s18 class='n'></td>
+			<td id=z15s19 class='n'></td>
+			<td id=z15s20 class='n'></td>
+			<td id=z15s21 class='n'></td>
+			<td id=z15s22 class='n'></td>
+			<td id=z15s23 class='n'></td>
+			<td id=z15s24 class='n'></td>
+			<td id=z15s25 class='n'></td>
+			<td id=z15s26 class='n'></td>
+			<td id=z15s27 class='n'></td>
+			<td id=z15s28 class='n'></td>
+		</tr>
+		<tr id=z16>
+			<td id=z16s1 class='n'></td>
+			<td id=z16s2 class='n'></td>
+			<td id=z16s3 class='n'></td>
+			<td id=z16s4 class='n'></td>
+			<td id=z16s5 class='n'></td>
+			<td id=z16s6 class='n'></td>
+			<td id=z16s7 class='n'></td>
+			<td id=z16s8 class='n'></td>
+			<td id=z16s9 class='n'></td>
+			<td id=z16s10 class='n'></td>
+			<td id=z16s11 class='n'></td>
+			<td id=z16s12 class='n'></td>
+			<td id=z16s13 class='n'></td>
+			<td id=z16s14 class='n'></td>
+			<td id=z16s15 class='n'></td>
+			<td id=z16s16 class='n'></td>
+			<td id=z16s17 class='n'></td>
+			<td id=z16s18 class='n'></td>
+			<td id=z16s19 class='n'></td>
+			<td id=z16s20 class='n'></td>
+			<td id=z16s21 class='n'></td>
+			<td id=z16s22 class='n'></td>
+			<td id=z16s23 class='n'></td>
+			<td id=z16s24 class='n'></td>
+			<td id=z16s25 class='n'></td>
+			<td id=z16s26 class='n'></td>
+			<td id=z16s27 class='n'></td>
+			<td id=z16s28 class='n'></td>
+		</tr>
+		<tr id=z17>
+			<td id=z17s1 class='n'></td>
+			<td id=z17s2 class='n'></td>
+			<td id=z17s3 class='n'></td>
+			<td id=z17s4 class='n'></td>
+			<td id=z17s5 class='n'></td>
+			<td id=z17s6 class='n'></td>
+			<td id=z17s7 class='n'></td>
+			<td id=z17s8 class='n'></td>
+			<td id=z17s9 class='n'></td>
+			<td id=z17s10 class='n'></td>
+			<td id=z17s11 class='n'></td>
+			<td id=z17s12 class='n'></td>
+			<td id=z17s13 class='n'></td>
+			<td id=z17s14 class='n'></td>
+			<td id=z17s15 class='n'></td>
+			<td id=z17s16 class='n'></td>
+			<td id=z17s17 class='n'></td>
+			<td id=z17s18 class='n'></td>
+			<td id=z17s19 class='n'></td>
+			<td id=z17s20 class='n'></td>
+			<td id=z17s21 class='n'></td>
+			<td id=z17s22 class='n'></td>
+			<td id=z17s23 class='n'></td>
+			<td id=z17s24 class='n'></td>
+			<td id=z17s25 class='n'></td>
+			<td id=z17s26 class='n'></td>
+			<td id=z17s27 class='n'></td>
+			<td id=z17s28 class='n'></td>
+		</tr><br><br>
+	</table>
+	<!--Game area-->
+
+	<!--most of the Javascript-->
+	<script src="snek.js"></script>
+</body>
+</html>
