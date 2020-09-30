@@ -5,6 +5,8 @@ body{
 }h1{
 	text-align: center;
 }button{
+	background-color: thistle;
+	border: 2px solid grey;
 	width: 100%;
 	height: 60px;
 }
@@ -13,10 +15,14 @@ table,tr,td{
 	border: 1px solid black;
 	box-shadow: 1px 1px 1px 1px black;
 }table{
-	border-collapse: collapse;
+	border: 5px solid grey;
+	border-radius: 5px;
+	background-color: thistle;
 }td{
 	height: 30px;
 	width: 30px;
+}tr{
+	border-collapse: collapse;
 }
 
 .head{
